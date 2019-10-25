@@ -1,0 +1,288 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    background: url(backgroundSiteBlur.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    
+}
+
+h1 {
+    font-size:  5vw;
+    text-align: center;
+}
+
+#titleTextContainer {
+    display: inline-block;
+   /*background: rgba(128, 128, 128, 0.863);*/
+   background: rgba(255, 255, 255, 0.918);
+   border-top-left-radius: 5%;
+   border-top-right-radius: 5%;
+   border-bottom-left-radius: 40%;
+   border-bottom-right-radius: 40%;
+   border-bottom: 1cm solid yellow;
+   margin: 0 auto;
+   margin-bottom: 2%;
+}
+
+#textBee {
+    color: yellow ;
+    background: rgba(0, 0, 0, 0.719);
+    border-radius: 9px;
+    font-family: 'Fredoka One';
+}
+
+/**********************************************/
+
+#getLocationButtonRow {
+    display: none;
+}
+
+#getLocationButton {
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    background-color:rgba(255, 255, 255, 0.918);
+    border: none;
+    border-radius: 9px;
+    border-bottom: 0.1cm solid yellow;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#getLocationButton span {
+    transition:0.5s;
+}
+
+#getLocationButton span:before {
+    content: '\003e';
+    transition: 0.5s;
+    opacity: 0;
+
+}
+
+#getLocationButton span:after {
+    content: '\003c';
+    transition: 0.5s;
+    opacity: 0;
+
+}
+
+#getLocationButton:hover {
+    border: 0.085cm solid yellow;
+}
+
+#getLocationButton:hover span {
+    font-size: 150%;
+}
+
+#getLocationButton:hover span:before {
+    opacity: 1;
+
+}
+
+#getLocationButton:hover span:after {
+    opacity: 1;
+
+}
+
+/**********************************************/
+
+#yourLocationRow {
+   height: 5vw;
+}
+
+#addressColumn {
+    background-color: yellow;
+    border-radius: 9px;
+    height: 100%;
+}
+
+#textPlusAddress {
+    margin: 0;
+    line-height: 0%;
+}
+
+#yourLocationText {
+    height: 10%;
+}
+
+#yourAddress {
+    font-weight: bold;
+    height: 100%;
+}
+
+/**********************************************/
+#placesAndMapSection {
+    height: 60%;
+}
+
+#placesList {
+    height: 50%;
+    overflow: scroll;
+}
+
+.listElementColumn {
+    height: 100%;
+}
+
+.listElementDiv {
+    background:  rgba(128, 128, 128, 0.863);
+    border-bottom:0.5vw solid yellow;
+    border-radius: 9px;
+    height :50%;
+    margin-bottom: 0.2cm;
+    overflow: hidden;
+
+}
+
+.listElementUtils {
+    color: yellow;
+    font-size: 50%;
+    font-weight: bold;
+}
+
+.listElementHeader {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.listElementAddress {
+    font-size: 80%;
+
+}
+
+.listElementOthers {
+    font-size: 50%;
+    
+}
+
+.listElementImage {
+    display: block;
+    padding-left: 50%;
+    padding-right: 50%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+}
+
+/*MIstake in JavaScript led to this class*/
+.listElementButtonsContainer {
+    height: 100%;
+   
+}
+
+.listElementButton {
+    margin: 0;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%;
+    height: 50%;
+    display: block;
+    background: transparent;
+    text-align: center;
+    font-size: 50%;
+    transition: 0.5s;
+}
+.listElementButton:hover {
+    background: yellow;
+    transition: 0.5s;
+}
+.listElementDisabledButton {
+    margin: 0;
+    border: 0;
+    width: 100%;
+    height: 50%;
+    display: block;
+    background: transparent;
+    text-align: center;
+    font-size: 1vw;
+}
+
+#mapContainer {
+    padding: 0;
+    margin:0 auto;
+    background-color: yellow;
+    height: 50%;
+    
+}
+/**********************************************/
+@media only screen and (max-width: 600px) {
+    html {
+        background: url(backgroundSiteBlurMobile.jpg) no-repeat center center fixed;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .hiddenOnMobile {
+        display: none;
+    }
+
+    .boldOnMobile {
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    #titleTextContainer {
+        border-bottom: 0.2cm solid yellow;
+        height: 30vw;
+        margin-top: 0;
+        
+    }
+
+    .listElementP {
+        margin: 0;
+    }
+
+    .listElementColumnInfoMobile {
+        width: 75%;
+    }
+    .listElementColumnButtonsMobile {
+        width: 25%
+    }
+
+}
