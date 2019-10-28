@@ -4,7 +4,7 @@
 }
 
 html {
-    background: url(backgroundSiteBlur.jpg) no-repeat center center fixed;
+    background: url(mobileBackground.JPG) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -48,20 +48,19 @@ h1 {
 #titleTextContainer {
     display: inline-block;
    /*background: rgba(128, 128, 128, 0.863);*/
-   background: rgba(255, 255, 255, 0.918);
+   background: rgba(255, 255, 255, 0.8);
    border-top-left-radius: 5%;
    border-top-right-radius: 5%;
    border-bottom-left-radius: 40%;
    border-bottom-right-radius: 40%;
-   border-bottom: 1cm solid yellow;
+   border-bottom: 1cm solid rgb(252, 125, 7);
    margin: 0 auto;
    margin-top: 10%;
    margin-bottom: 2%;
 }
 
 #textBee {
-    color: yellow ;
-    background: rgba(0, 0, 0, 0.719);
+    color: rgb(252, 125, 7);
     border-radius: 9px;
     font-family: 'Fredoka One';
 }
@@ -74,10 +73,10 @@ h1 {
     text-align: center;
     font-size: 100%;
     font-weight: bold;
-    background-color:rgba(255, 255, 255, 0.918);
+    background-color:rgba(255, 255, 255, 0.8);
     border: none;
     border-radius: 9px;
-    border-bottom: 0.1cm solid yellow;
+    border-bottom: 0.1cm solid rgb(252, 125, 7);
     cursor: pointer;
     transition: all 0.5s;
 }
@@ -101,7 +100,7 @@ h1 {
 }
 
 #getLocationButton:hover {
-    border: 0.085cm solid yellow;
+    border: 0.085cm solid rgb(252, 125, 7);
 }
 
 #getLocationButton:hover span {
@@ -121,7 +120,7 @@ h1 {
 /**********************************************/
 
 #addressColumn {
-    background-color: yellow;
+    background-color: rgb(252, 125, 7);
     border-radius: 9px;
     display: none;
 }
@@ -133,7 +132,6 @@ h1 {
 
 @media only screen and (max-width: 600px) {
     html {
-        background: url(backgroundSiteBlurMobile.jpg) no-repeat center center fixed;
         background-size: cover;
         height: 100%;
         width: 100%;
@@ -149,9 +147,9 @@ h1 {
     }
 
     #titleTextContainer {
-        border-bottom: 0.2cm solid yellow;
+        border-bottom: 0.2cm solid rgb(252, 125, 7);
         height: 30vw;
-        margin-top: 40%;
+        margin-top: 20%;
         
     }
 

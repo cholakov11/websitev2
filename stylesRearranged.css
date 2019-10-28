@@ -4,7 +4,7 @@
 }
 
 html {
-    background: url(backgroundSiteBlur.jpg) no-repeat center center fixed;
+    background: url(mobileBackground.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -41,26 +41,28 @@ body {
 }
 
 h1 {
-    font-size:  5vw;
+    font-size:  3vw;
     text-align: center;
+}
+
+#title {
+    height: 25%;
 }
 
 #titleTextContainer {
     display: inline-block;
    /*background: rgba(128, 128, 128, 0.863);*/
-   background: rgba(255, 255, 255, 0.918);
+   background: rgba(255, 255, 255, 0.8);
    border-top-left-radius: 5%;
    border-top-right-radius: 5%;
    border-bottom-left-radius: 40%;
    border-bottom-right-radius: 40%;
-   border-bottom: 1cm solid yellow;
-   margin: 0 auto;
+   border-bottom: 1cm solid rgb(252, 125, 7);
    margin-bottom: 2%;
 }
 
 #textBee {
-    color: yellow ;
-    background: rgba(0, 0, 0, 0.719);
+    color: rgb(252, 125, 7) ;
     border-radius: 9px;
     font-family: 'Fredoka One';
 }
@@ -77,10 +79,10 @@ h1 {
     text-align: center;
     font-size: 100%;
     font-weight: bold;
-    background-color:rgba(255, 255, 255, 0.918);
+    background-color:rgba(255, 255, 255, 0.8);
     border: none;
     border-radius: 9px;
-    border-bottom: 0.1cm solid yellow;
+    border-bottom: 0.1cm solid rgb(252, 125, 7);
     cursor: pointer;
     transition: all 0.5s;
 }
@@ -104,7 +106,7 @@ h1 {
 }
 
 #getLocationButton:hover {
-    border: 0.085cm solid yellow;
+    border: 0.085cm solid rgb(252, 125, 7);
 }
 
 #getLocationButton:hover span {
@@ -128,23 +130,25 @@ h1 {
 }
 
 #addressColumn {
-    background-color: yellow;
+    background-color: rgb(252, 125, 7, 0.8);
     border-radius: 9px;
     height: 100%;
 }
 
 #textPlusAddress {
     margin: 0;
-    line-height: 0%;
 }
 
 #yourLocationText {
-    height: 10%;
+    font-weight: bold;
+    font-size: 80%;
+    
 }
 
 #yourAddress {
     font-weight: bold;
-    height: 100%;
+    font-size: 100%;
+    
 }
 
 /**********************************************/
@@ -153,7 +157,7 @@ h1 {
 }
 
 #placesList {
-    height: 50%;
+    height: 100%;
     overflow: scroll;
 }
 
@@ -162,18 +166,17 @@ h1 {
 }
 
 .listElementDiv {
-    background:  rgba(128, 128, 128, 0.863);
-    border-bottom:0.5vw solid yellow;
+    background: rgba(255, 255, 255, 0.8)/*rgba(128, 128, 128, 0.863)*/;
+    border-bottom:0.5vw solid rgb(252, 125, 7);
     border-radius: 9px;
-    height :50%;
+    height :40%;
     margin-bottom: 0.2cm;
     overflow: hidden;
-
 }
 
 .listElementUtils {
-    color: yellow;
-    font-size: 50%;
+    color: rgb(252, 125, 7);
+    font-size: 100%;
     font-weight: bold;
 }
 
@@ -183,28 +186,21 @@ h1 {
 }
 
 .listElementAddress {
-    font-size: 80%;
+    font-size: 100%;
 
 }
 
 .listElementOthers {
-    font-size: 50%;
+    font-size: 100%;
     
 }
 
 .listElementImage {
     display: block;
-    padding-left: 50%;
-    padding-right: 50%;
-    padding-top: 50%;
-    padding-bottom: 50%;
+    padding-top: 25%;
+    padding-left: 25%;
 }
 
-/*MIstake in JavaScript led to this class*/
-.listElementButtonsContainer {
-    height: 100%;
-   
-}
 
 .listElementButton {
     margin: 0;
@@ -216,11 +212,11 @@ h1 {
     display: block;
     background: transparent;
     text-align: center;
-    font-size: 50%;
+    font-size: 100%;
     transition: 0.5s;
 }
 .listElementButton:hover {
-    background: yellow;
+    background: rgb(252, 125, 7);
     transition: 0.5s;
 }
 .listElementDisabledButton {
@@ -237,9 +233,32 @@ h1 {
 #mapContainer {
     padding: 0;
     margin:0 auto;
-    background-color: yellow;
-    height: 50%;
+    height: 60%;
+}
+@media only screen and (min-width: 601px) {
     
+    h1 {
+        margin-top: 0;
+    }
+    
+    #titleTextContainer {
+       width: 50%;
+       height: 70%;
+       border-bottom: 0.3cm solid rgb(252, 125, 7);
+    }
+
+    #addressColumn {
+        height: 75%;
+    }
+    
+    #placesList {
+        width: 50%;
+    }
+
+    #mapContainer {
+        height: 100%;
+    }
+        
 }
 /**********************************************/
 @media only screen and (max-width: 600px) {
@@ -268,10 +287,58 @@ h1 {
     }
 
     #titleTextContainer {
-        border-bottom: 0.2cm solid yellow;
+        border-bottom: 0.2cm solid rgb(252, 125, 7);
         height: 30vw;
         margin-top: 0;
         
+    }
+
+    #textPlusAddress {
+        line-height: 0;
+    }
+
+    #yourLocationText {
+        height: 10%;
+        font-size: 40%;
+    }
+    
+    #yourAddress {
+        font-size: 60%;      
+    }
+
+    #placesAndMapSection {
+        height: 60%;
+    }
+    
+    #placesList {
+        height: 50%;
+        overflow: scroll;
+    }
+    
+    .listElementDiv {
+        height: 50%;
+    }
+
+    .listElementUtils {
+        font-size: 50%;
+    }
+    
+    .listElementHeader {
+        font-size: 100%;
+    }
+    
+    .listElementAddress {
+        font-size: 50%;
+    
+    }
+    
+    .listElementOthers {
+        font-size: 50%;
+        
+    }
+
+    .listElementButton {
+        font-size: 50%;
     }
 
     .listElementP {

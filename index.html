@@ -7,7 +7,32 @@
     <title>BEE?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-    <link rel="stylesheet" href="stylesRearranged.css">
+    <link id="stylesheet" rel="stylesheet" href="styles.css">
+
+    <!--For Leaflet-->
+
+    <!-----Leaflet Hosted
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+    --->
+    <link rel="stylesheet" href="./js/Leaflet/leaflet.css" />
+    <script src="./js/Leaflet/leaflet.js"></script>
+    <!---->
+
+    <!--For Google Maps Api-->
+    <!--
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    -->
+
+    <!--Here Maps Api-->
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-places.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
@@ -36,7 +61,7 @@
         <div class="col-1 hiddenOnMobile"></div>
         <div id="addressColumn" class="col-6">
             <p id="textPlusAddress">
-                <span id="yourLocationText">Your location:</span>
+                <span id="yourLocationText">Your location: </span>
                 <span id="yourAddress"></span>
             </p>
         </div>
@@ -44,99 +69,12 @@
     </div>
     <div id="placesAndMapSection" class="row hidden">
         <div class="col-1 hiddenOnMobile"></div>
-        <div class="col-6" id="placesList">
-            <div class="row listElementDiv">
-                <div class="col-2 listElementColumn hiddenOnMobile">
-                    <img src="" class="listElementImage" />
-                </div>
-                <div class="col-8 listElementColumn listElementColumnInfoMobile">
-                    <p class="listElementP boldOnMobile">
-                        <span class="listElementUtils">Place name: </span>
-                        <span class="listElementHeader">Club 49</span>
-                    </p>
-                    <p class="listElementP boldOnMobile">
-                        <span class="listElementUtils">Address: </span>
-                        <span class="listElementAddress">Marie-Alexandra Str. 49</span>
-                    </p>
-                    <p class="listElementP boldOnMobile">
-                        <span>
-                            <span class="listElementUtils">Type: </span>
-                            <span class="listElementOthers">Nightclub</span>
-                        </span>
-                        <span>
-                            <span class="listElementUtils">Opening hours: </span>
-                            <span class="listElementOthers">Mon-Sam 17-02</span>
-                        </span>
-                    </p>
-                </div>
-                <div class="col-2 listElementColumn listElementColumnButtonsMobile">
-                    <button class="listElementButton boldOnMobile">Show on map</button>
-                    <button class="listElementButton boldOnMobile">Visit website</button>
-                </div>
-            </div>
-            <div class="row listElementDiv">
-                <div class="col-2 listElementColumn hiddenOnMobile">
-                    <img src="" class="listElementImage" />
-                </div>
-                <div class="col-8 listElementColumn listElementColumnInfoMobile">
-                    <p class="listElementP boldOnMobile">
-                        <span class="listElementUtils">Place name: </span>
-                        <span class="listElementHeader">Club 49</span>
-                    </p>
-                    <p class="listElementP boldOnMobile">
-                        <span class="listElementUtils">Address: </span>
-                        <span class="listElementAddress">Marie-Alexandra Str. 49</span>
-                    </p>
-                    <p class="listElementP boldOnMobile">
-                        <span>
-                            <span class="listElementUtils">Type: </span>
-                            <span class="listElementOthers">Nightclub</span>
-                        </span>
-                        <span>
-                            <span class="listElementUtils">Opening hours: </span>
-                            <span class="listElementOthers">Mon-Sam 17-02</span>
-                        </span>
-                    </p>
-                </div>
-                <div class="col-2 listElementColumn listElementColumnButtonsMobile">
-                    <button class="listElementButton boldOnMobile">Show on map</button>
-                    <button class="listElementButton boldOnMobile">Visit website</button>
-                </div>
-            </div>
-            <div class="row listElementDiv">
-                <div class="col-2 listElementColumn hiddenOnMobile">
-                    <img src="" class="listElementImage" />
-                </div>
-                <div class="col-8 listElementColumn listElementColumnInfoMobile">
-                    <p class="listElementP boldOnMobile">
-                        <span class="listElementUtils">Place name: </span>
-                        <span class="listElementHeader">Club 49</span>
-                    </p>
-                    <p class="listElementP boldOnMobile">
-                        <span class="listElementUtils">Address: </span>
-                        <span class="listElementAddress">Marie-Alexandra Str. 49</span>
-                    </p>
-                    <p class="listElementP boldOnMobile">
-                        <span>
-                            <span class="listElementUtils">Type: </span>
-                            <span class="listElementOthers">Nightclub</span>
-                        </span>
-                        <span>
-                            <span class="listElementUtils">Opening hours: </span>
-                            <span class="listElementOthers">Mon-Sam 17-02</span>
-                        </span>
-                    </p>
-                </div>
-                <div class="col-2 listElementColumn listElementColumnButtonsMobile">
-                    <button class="listElementButton boldOnMobile">Show on map</button>
-                    <button class="listElementButton boldOnMobile">Visit website</button>
-                </div>
-            </div>
-        </div>
+        <div class="col-6" id="placesList"></div>
         <div class="col-1 hiddenOnMobile"></div>
         <div id="mapContainer" class="col-3"></div>
         <div class="col-1"></div>
     </div>
 </body>
+<script src="js/appHere.js"></script>
 
 </html>
