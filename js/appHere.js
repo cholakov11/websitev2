@@ -175,7 +175,7 @@ function onFetchPlaceDetails(data) {
     spanPlaceAddressUtils.classList.add("listElementUtils");
 
     var spanPlaceAddresVar = document.createElement('span');
-    var placeAddress = document.createTextNode( placeDetails.location.address.text.replace(/<br\/>/g, " "));
+    var placeAddress = document.createTextNode(placeDetails.location.address.text.replace(/<br\/>/g, " "));
     spanPlaceAddresVar.appendChild(placeAddress);
     spanPlaceAddresVar.classList.add("listElementAddress");
 
@@ -236,7 +236,7 @@ function onFetchPlaceDetails(data) {
     ////////////////////////////////////////////////////////////////////////
 
     //Creating Buttons//////////////////////////////////////////////
-    //Creating button which shows place on map
+    //Creating a button which shows place on map
     var showOnMapButton = document.createElement("button");
     var showOnMapText = document.createTextNode("Show on map");
     showOnMapButton.appendChild(showOnMapText);
@@ -245,7 +245,7 @@ function onFetchPlaceDetails(data) {
     showOnMapButton.onclick = function() {onShowOnMapClick(placeDetails.location.position[0],placeDetails.location.position[1], placeDetails.name)};
     spanButtons.appendChild(showOnMapButton);
 
-    //Creatinga button with link to website if provided
+    //Creating a button with link to website if provided
     var visitWebsiteButton = document.createElement("button");
     visitWebsiteButton.classList.add("listElementButton");
     visitWebsiteButton.classList.add("boldOnMobile");
@@ -263,6 +263,17 @@ function onFetchPlaceDetails(data) {
         
     }
     spanButtons.appendChild(visitWebsiteButton);
+
+    //Creating a button which saves place info to clients computer
+    var savePlaceInfo = document.createElement("button");
+    var savePlaceInfoText = document.createTextNode("Download information");
+    savePlaceInfo.appendChild(savePlaceInfoText);
+    savePlaceInfo.classList.add("listElementButton");
+    savePlaceInfo.classList.add("boldOnMobile");
+    savePlaceInfo.onclick = function() {generateAndDownloadInfo(placeDetails)};
+    spanButtons.appendChild(savePlaceInfo);
+
+
     /////////////////////////////////////////////////////////////
     
     //Add all components to main container///////////////////////
@@ -311,6 +322,27 @@ function showMap() {
 
 function showPosition(position) {
     reverseGeocode1(position.coords.latitude, position.coords.longitude);
+}
+
+function generateAndDownloadInfo(placeDetails) {
+    var openingHours;
+    if(placeDetails.extended != null) {
+        openingHours = placeDetails.extended.openingHours.text.replace(/<br\/>/g, " ") + " ";
+    } else {
+        openingHours = "No info provided ";
+    }
+    var placeDetailsAsString = "Place name: " + placeDetails.name + "\n"
+                                + "Place address: " + placeDetails.location.address.text.replace(/<br\/>/g, " ") + "\n"
+                                + "Type: " + placeDetails.categories[0].title + "\n"
+                                + "Opening hours: " + openingHours;
+
+    var downloadLink = document.createElement("a");
+    downloadLink.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(placeDetailsAsString));
+    downloadLink.setAttribute("download", placeDetails.name + ".txt");
+
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
 }
 
 
