@@ -48,8 +48,10 @@ function getLocation() {
 }
 
 function reverseGeocode1(lat,lng) {
+    var simLat = 48.590390
+    var simLng = 7.739830
     var reverseGeocodeParam = {
-        prox : lat + "," + lng,
+        prox : simLat + "," + simLng,
         mode: 'retrieveAddresses',
         maxresults: 10
     };
